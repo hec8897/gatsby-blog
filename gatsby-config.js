@@ -6,5 +6,5 @@ module.exports = {
     title: `Gatsby + Vercel`,
     siteUrl: `https://gatsby-template.vercel.app/`,
   },
-  plugins: ["gatsby-plugin-postcss"],
+  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-resolve-src"],
 };

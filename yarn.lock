@@ -6684,6 +6684,7 @@ __metadata:
     autoprefixer: ^10.4.13
     gatsby: ^5.0.0
     gatsby-plugin-postcss: ^6.7.0
+    gatsby-plugin-resolve-src: ^2.1.0
     postcss: ^8.4.21
     react: ^18.2.0
     react-dom: ^18.2.0
@@ -6867,6 +6868,15 @@ __metadata:
     gatsby: ^5.0.0-next
     postcss: ^8.0.5
   checksum: 82b607d0de8b1bf036fd308481a9daba634d4bbb238f45ec69055dc1076e591b2709eabb99aefe3e2cd98877b3a70b9e534c2152dd574f3b7e30ac0732acb7eb
+  languageName: node
+  linkType: hard
+
+"gatsby-plugin-resolve-src@npm:^2.1.0":
+  version: 2.1.0
+  resolution: "gatsby-plugin-resolve-src@npm:2.1.0"
+  peerDependencies:
+    gatsby: ">2.0.0-alpha"
+  checksum: df02440f4b703d9323bffc3db6f02d8db0401281afd220d7857547de28cf7cf9c97454f604e9cdb8686dcc898624bfb0164d28b04f938b339515b9ece1e0908c
   languageName: node
   linkType: hard
 
