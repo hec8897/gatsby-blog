@@ -8,13 +8,13 @@ const Header = () => (
       <h1 className="font-bold text-xl">DawoonRoad</h1>
       <ul className="flex gap-4 items-center">
         <li>
-          <Link to="about">About</Link>
+          <Link to="about">FE</Link>
         </li>
         <li>
-          <Link to="posting">posting</Link>
+          <Link to="develop">JS/TS</Link>
         </li>
         <li>
-          <Link to="develop">develop</Link>
+          <Link to="posting">Posting</Link>
         </li>
       </ul>
     </div>

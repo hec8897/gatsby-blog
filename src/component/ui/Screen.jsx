@@ -1,7 +1,7 @@
 import React from "react";
 
 const Screen = ({ children }) => (
-  <div className="w-[1200px] m-auto">{children}</div>
+  <div className="w-full lg:w-[1024px] m-auto px-2">{children}</div>
 );
 
 export default Screen;
