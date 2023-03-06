@@ -1,12 +1,14 @@
 import * as React from "react";
-import "../styles/global.css";
-import { Header } from "component";
+import "styles/global.css";
+import { Header, Screen } from "component";
 
 const IndexPage = () => {
   return (
     <main>
       <Header />
-      <h1 className="text-3xl font-bold underline text-red-500">123</h1>
+      <Screen>
+        <h1 className="text-3xl font-bold underline text-red-500">블로그</h1>
+      </Screen>
     </main>
   );
 };
