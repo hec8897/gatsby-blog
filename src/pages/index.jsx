@@ -1,13 +1,19 @@
 import * as React from "react";
 import "styles/global.css";
-import { Header, Screen } from "component";
+import { Header, Screen, Card } from "component";
 
 const IndexPage = () => {
   return (
     <main>
       <Header />
       <Screen>
-        <h1 className="text-3xl font-bold underline text-red-500">블로그</h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-4 gap-4">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </Screen>
     </main>
   );
