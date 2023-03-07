@@ -15,9 +15,9 @@ export const pageQuery = graphql`
   }
 `;
 
-export default function BlogPostTemplate({
+const BlogPostTemplate = ({
   data, // this prop will be injected by the GraphQL query below.
-}) {
+}) => {
   console.log(data);
   const { markdownRemark } = data; // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark;
@@ -32,4 +32,6 @@ export default function BlogPostTemplate({
       </div>
     </Template>
   );
-}
+};
+
+export default BlogPostTemplate;

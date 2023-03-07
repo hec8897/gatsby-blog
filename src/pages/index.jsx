@@ -1,34 +1,38 @@
 import * as React from "react";
 import "styles/global.css";
 import { Header, Screen, Card } from "component";
+import { graphql } from "gatsby";
 
-const CONTENT_LIST = [
-  {
-    id: 0,
-    title: "title",
-    link: "blog/my-first-blog-post",
-    summary: "Lorem ipsum dolor sit consectetur adipisicing.",
-    tagList: ["JavaScript", "TypeScript"],
-    date: "2023-01-01",
-  },
-  {
-    id: 1,
-    title: "title",
-    link: "FE",
-    summary: "Lorem ipsum dolor sit consectetur adipisicing.",
-    tagList: ["JavaScript", "TypeScript"],
-    date: "2023-01-01",
-  },
-];
+export const pageQuery = graphql`
+  query MyQuery {
+    allMarkdownRemark {
+      nodes {
+        id
+        frontmatter {
+          title
+          summary
+          date
+          categories
+          featuredImage {
+            childImageSharp {
+              gatsbyImageData(width: 400)
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
-const IndexPage = () => {
+const IndexPage = ({ data }) => {
+  const { allMarkdownRemark } = data;
   return (
     <main>
       <Header />
       <Screen>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-4 gap-4">
-          {CONTENT_LIST.map((ele) => (
-            <Card key={ele.id} data={ele} />
+          {allMarkdownRemark.nodes.map((data) => (
+            <Card key={data.id} data={data.frontmatter} />
           ))}
         </div>
       </Screen>
