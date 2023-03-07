@@ -6,7 +6,7 @@ const CONTENT_LIST = [
   {
     id: 0,
     title: "title",
-    link: "FE",
+    link: "blog/my-first-blog-post",
     summary: "Lorem ipsum dolor sit consectetur adipisicing.",
     tagList: ["JavaScript", "TypeScript"],
     date: "2023-01-01",

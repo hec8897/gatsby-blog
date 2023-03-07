@@ -10,7 +10,7 @@ const Card = ({ data }) => {
       </div>
       <div>
         <h2 className="text-lg font-bold hover:underline cursor-pointer">
-          <Link to={link + "/" + id}>{title}</Link>
+          <Link to={link}>{title}</Link>
         </h2>
         <p className="text-xs">{summary}</p>
         <p className="text-right">
