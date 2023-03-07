@@ -1,3 +1,54 @@
+.md {
+  font-size: 14px;
+}
 .md h1 {
-  font-size: 25px;
+  font-size: 2em;
+}
+
+.md h2 {
+  font-size: 1.5em;
+}
+
+.md h3 {
+  font-size: 1.25em;
+}
+
+.md h4 {
+  font-size: 1.125em;
+}
+
+.md code {
+  background: #d0d0d0 !important;
+  color: #fff;
+}
+.md ul,
+.md ol {
+  padding-left: 1rem;
+}
+.md ul li {
+  list-style-type: "- ";
+}
+
+.md a {
+  color: lightblue;
+}
+
+.md ol li {
+  list-style-type: decimal;
+}
+
+.md blockquote {
+  border: 1px solid #27a9e3;
+  margin-left: 0px;
+  margin-right: 0px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-left: 10px solid #27a9e3;
+}
+
+.md table th {
+  border: 1px solid #222;
+}
+.md table td {
+  border: 1px solid #222;
 }

@@ -20,11 +20,13 @@ export default function BlogPostTemplate({
 }) {
   console.log(data);
   const { markdownRemark } = data; // data.markdownRemark holds your post data
-  const { html } = markdownRemark;
+  const { frontmatter, html } = markdownRemark;
+
   return (
     <Template>
       <div className="md">
         <div>
+          <h1>{frontmatter.title}</h1>
           <div dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
