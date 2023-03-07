@@ -14,7 +14,7 @@ const Card = ({ data }) => {
       </div>
       <div>
         <h2 className="text-lg font-bold hover:underline cursor-pointer">
-          <Link to={"posts/" + title}>{title}</Link>
+          <Link to={"blog/" + title}>{title}</Link>
         </h2>
         <p className="text-xs">{summary}</p>
         <p className="text-right">

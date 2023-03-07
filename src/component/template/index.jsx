@@ -1,5 +1,5 @@
 import * as React from "react";
-import "styles/global.css";
+import "./markdown.css";
 import { Header, Screen } from "component";
 
 const Template = ({ children }) => {
