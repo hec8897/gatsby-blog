@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Template, CategoryList, GatsbyImageComponent } from "component";
+import { Template, Title } from "component";
 
 export const pageQuery = graphql`
   query MyQuery {
@@ -21,32 +21,31 @@ export const pageQuery = graphql`
   }
 `;
 
-const BlogPostTemplate = ({
-  data, // this prop will be injected by the GraphQL query below.
-}) => {
-  const { markdownRemark } = data; // data.markdownRemark holds your post data
+const BlogPostTemplate = ({ data }) => {
+  const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
 
   return (
     <Template>
       <div className="md">
-        <div>
-          <GatsbyImageComponent
-            gatsbyImageData={
-              frontmatter.featuredImage?.childImageSharp?.gatsbyImageData
-            }
-            alt="썸네일"
-          />
-          <div className="flex flex-col gap-1 mb-4">
-            <h1 className="font-bold">{frontmatter.title}</h1>
-            <p>{frontmatter.date}</p>
-            <CategoryList categories={frontmatter.categories} />
-          </div>
-          <div dangerouslySetInnerHTML={{ __html: html }} />
-        </div>
+        <Title
+          categories={frontmatter.categories}
+          image={frontmatter.featuredImage?.childImageSharp?.gatsbyImageData}
+          date={frontmatter.date}
+        >
+          {frontmatter.title}
+        </Title>
+        <div className="py-4" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Template>
   );
 };
 
 export default BlogPostTemplate;
+
+export const Head = ({ data }) => {
+  const { markdownRemark } = data;
+  const { frontmatter } = markdownRemark;
+
+  return <title>{frontmatter.title}</title>;
+};
