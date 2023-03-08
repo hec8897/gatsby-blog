@@ -10,12 +10,13 @@ export const pageQuery = graphql`
         id
         frontmatter {
           title
+          link
           summary
           date
           categories
           featuredImage {
             childImageSharp {
-              gatsbyImageData(width: 400)
+              gatsbyImageData(width: 350)
             }
           }
         }

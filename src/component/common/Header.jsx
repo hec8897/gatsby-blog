@@ -5,7 +5,9 @@ import { Link } from "gatsby";
 const Header = () => (
   <Screen>
     <div className="flex justify-between items-center py-4">
-      <h1 className="font-bold text-xl">DawoonRoad</h1>
+      <Link to="/">
+        <h1 className="font-bold text-xl">DawoonRoad</h1>
+      </Link>
       <ul className="flex gap-4 items-center">
         <li>
           <Link to="about">FE</Link>
