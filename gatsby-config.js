@@ -10,6 +10,8 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-resolve-src",
     "gatsby-plugin-image",
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -17,8 +19,6 @@ module.exports = {
         path: `./src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,15 +31,18 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: "gatsby-remark-smartypants",
-            options: {
-              dashes: "oldschool",
-            },
-          },
-          {
             resolve: "gatsby-remark-prismjs",
             options: {
               classPrefix: "language-",
+              inlineCodeMarker: null,
+              showLineNumbers: true,
+              noInlineHighlight: true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-smartypants",
+            options: {
+              dashes: "oldschool",
             },
           },
           {
