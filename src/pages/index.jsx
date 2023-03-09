@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 
 export const pageQuery = graphql`
   query MyQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       nodes {
         id
         frontmatter {
