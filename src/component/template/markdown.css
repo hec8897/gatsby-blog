@@ -1,29 +1,35 @@
 .md {
-  font-size: 14px;
+  font-size: 16px;
+}
+
+.md p {
+  line-height: 1.5rem;
+  word-break: keep-all;
 }
 .md h1 {
   font-size: 2em;
+  font-weight: bold;
 }
 
 .md h2 {
   font-size: 1.5em;
+  font-weight: bold;
 }
 
 .md h3 {
   font-size: 1.25em;
+  font-weight: bold;
 }
 
 .md h4 {
   font-size: 1.125em;
+  font-weight: bold;
 }
 
-.md code {
-  background: #d0d0d0 !important;
-  color: #fff;
-}
 .md ul,
 .md ol {
   padding-left: 1rem;
+  margin: 10px 0;
 }
 .md ul li {
   list-style-type: "- ";
@@ -45,10 +51,44 @@
   padding-right: 20px;
   border-left: 10px solid #27a9e3;
 }
+.md table {
+  min-width: 50%;
+  margin: 10px 0;
+}
 
+.md table th,
+.md table td {
+  border: 1px solid #d0d0d0;
+  text-align: center;
+}
 .md table th {
-  border: 1px solid #222;
+  padding: 10px 5px;
 }
 .md table td {
-  border: 1px solid #222;
+  padding: 14px 5px;
+}
+
+.md code {
+  background-color: #d0d0d0;
+  font-size: 14px;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.gatsby-highlight {
+  background-color: #2d2d2d;
+  border-radius: 0.3em;
+  margin: 0.5em 0;
+  padding: 0.5em;
+  overflow: auto;
+}
+.gatsby-highlight code {
+  background-color: inherit;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding: 0;
+  font-size: 14px;
+  padding-left: 2.8em;
+  overflow: initial;
 }

@@ -27,14 +27,14 @@ const BlogPostTemplate = ({ data }) => {
 
   return (
     <Template>
+      <Title
+        categories={frontmatter.categories}
+        image={frontmatter.featuredImage?.childImageSharp?.gatsbyImageData}
+        date={frontmatter.date}
+      >
+        {frontmatter.title}
+      </Title>
       <div className="md">
-        <Title
-          categories={frontmatter.categories}
-          image={frontmatter.featuredImage?.childImageSharp?.gatsbyImageData}
-          date={frontmatter.date}
-        >
-          {frontmatter.title}
-        </Title>
         <div className="py-4" dangerouslySetInnerHTML={{ __html: html }} />
       </div>
     </Template>
