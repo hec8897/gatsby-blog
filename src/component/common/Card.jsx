@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import { CategoryList, GatsbyImageComponent } from "component";
+import { AiFillFileUnknown } from "react-icons/ai";
 
 const Card = ({ data }) => {
   const { title, date, summary, categories, featuredImage, link } = data;
@@ -9,10 +10,14 @@ const Card = ({ data }) => {
     <Link to={"blog/" + link}>
       <div className="h-[280px] rounded border drop-shadow-md bg-white p-2 flex flex-col justify-between hover:-translate-y-2 transition-all">
         <div className="h-[50%] rounded bg-green-100 flex items-center justify-center overflow-hidden">
-          <GatsbyImageComponent
-            gatsbyImageData={featuredImage?.childImageSharp?.gatsbyImageData}
-            alt="썸네일"
-          />
+          {featuredImage ? (
+            <GatsbyImageComponent
+              gatsbyImageData={featuredImage.childImageSharp?.gatsbyImageData}
+              alt="썸네일"
+            />
+          ) : (
+            <AiFillFileUnknown size={32} />
+          )}
           {data?.preview}
         </div>
         <div>

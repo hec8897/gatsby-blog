@@ -3,8 +3,9 @@
 }
 
 .md p {
-  line-height: 1.5rem;
+  line-height: 1.75rem;
   word-break: keep-all;
+  margin: 10px 0;
 }
 .md h1 {
   font-size: 2em;
