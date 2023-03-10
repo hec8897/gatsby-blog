@@ -5,7 +5,10 @@ import { graphql } from "gatsby";
 
 export const pageQuery = graphql`
   query MyQuery {
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { categories: { eq: "frontEnd" } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       nodes {
         id
         frontmatter {
@@ -28,7 +31,7 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => {
   const { allMarkdownRemark } = data;
   return (
-    <Template title="dawoonRoad">
+    <Template active="front_end" title="dawoonRoad:front_end">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-4 gap-4">
         {allMarkdownRemark.nodes.map((data) => (
           <Card key={data.id} data={data.frontmatter} />
