@@ -10,13 +10,10 @@ const Header = () => (
       </Link>
       <ul className="flex gap-4 items-center">
         <li>
-          <Link to="about">FE</Link>
+          <Link to="/react">React</Link>
         </li>
         <li>
-          <Link to="develop">JS/TS</Link>
-        </li>
-        <li>
-          <Link to="posting">Posting</Link>
+          <Link to="/front_end">Front End</Link>
         </li>
       </ul>
     </div>

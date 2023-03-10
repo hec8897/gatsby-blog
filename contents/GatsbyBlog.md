@@ -1,7 +1,7 @@
 ---
 date: "2023-03-07"
 title: "Gatsby로 Blog 만들기"
-categories: ["Gatsby", "React", "Front End"]
+categories: ["Gatsby", "frontEnd"]
 series: 블로그 제작
 featuredImage: "../src/images/icon.png"
 link: "gatsby_blog"

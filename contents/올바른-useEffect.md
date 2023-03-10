@@ -1,7 +1,7 @@
 ---
 date: "2023-03-09"
 title: "올바른 useEffect 사용하기"
-categories: ["React", "Front End"]
+categories: ["React", "frontEnd"]
 series: React
 featuredImage: "../src/images/useEffect_thumbnail.png"
 link: "react_useeffect"
