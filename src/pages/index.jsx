@@ -28,7 +28,7 @@ export const pageQuery = graphql`
 const IndexPage = ({ data }) => {
   const { allMarkdownRemark } = data;
   return (
-    <Template>
+    <Template title="dawoonRoad">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 my-4 gap-4">
         {allMarkdownRemark.nodes.map((data) => (
           <Card key={data.id} data={data.frontmatter} />
@@ -39,5 +39,3 @@ const IndexPage = ({ data }) => {
 };
 
 export default IndexPage;
-
-export const Head = () => <title>Home Page</title>;

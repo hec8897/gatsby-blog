@@ -27,7 +27,7 @@ const BlogPostTemplate = ({ data }) => {
   const { frontmatter, html } = markdownRemark;
 
   return (
-    <Template>
+    <Template title={frontmatter.title}>
       <Title
         categories={frontmatter.categories}
         image={frontmatter.featuredImage?.childImageSharp?.gatsbyImageData}
@@ -49,10 +49,3 @@ const BlogPostTemplate = ({ data }) => {
 };
 
 export default BlogPostTemplate;
-
-export const Head = ({ data }) => {
-  const { markdownRemark } = data;
-  const { frontmatter } = markdownRemark;
-
-  return <title>{frontmatter.title}</title>;
-};

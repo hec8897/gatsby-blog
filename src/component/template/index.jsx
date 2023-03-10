@@ -1,15 +1,20 @@
 import * as React from "react";
 import "./markdown.css";
 import { Header, Screen } from "component";
-
-const Template = ({ children, active }) => {
+import { Helmet } from "react-helmet";
+const Template = ({ children, active, title }) => {
   return (
-    <main>
-      <Screen>
-        <Header {...active} />
-      </Screen>
-      <Screen>{children}</Screen>
-    </main>
+    <>
+      <Helmet>
+        <title>{title}</title>
+      </Helmet>
+      <main>
+        <Screen>
+          <Header {...active} />
+        </Screen>
+        <Screen>{children}</Screen>
+      </main>
+    </>
   );
 };
 
