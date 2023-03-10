@@ -2,10 +2,12 @@ import * as React from "react";
 import "./markdown.css";
 import { Header, Screen } from "component";
 
-const Template = ({ children }) => {
+const Template = ({ children, active }) => {
   return (
     <main>
-      <Header />
+      <Screen>
+        <Header {...active} />
+      </Screen>
       <Screen>{children}</Screen>
     </main>
   );

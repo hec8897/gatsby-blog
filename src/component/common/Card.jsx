@@ -7,7 +7,7 @@ const Card = ({ data }) => {
   const { title, date, summary, categories, featuredImage, link } = data;
 
   return (
-    <Link to={"blog/" + link}>
+    <Link to={"/blog/" + link}>
       <div className="h-[280px] rounded border drop-shadow-md bg-white p-2 flex flex-col justify-between hover:-translate-y-2 transition-all">
         <div className="h-[50%] rounded bg-green-100 flex items-center justify-center overflow-hidden">
           {featuredImage ? (
