@@ -3,6 +3,7 @@ date: "2023-03-12"
 title: "monorepo-boilerplate 만들기!"
 categories: ["React", "frontEnd"]
 featuredImage: "../src/images/monorepo-polyrepo.png"
+series: monorepo
 link: "monorepo"
 summary: "monorepo boilerplate 를 구성하는 방법"
 ---
@@ -113,7 +114,7 @@ next-app 에 사용되는 의존성들은 root 에서 관리한다.
 
 > yarn berry 를 사용할 경우 typescript 에러가 발생하는 경우가 있다.
 > 아래 의존성을 설치하고 사진과 같이 typeScript 버전을 선택해준다
-> <br/> `yarn dlx @yarnpkg/sdks vscode` ![alt](../src/images/monorepo1.png) ![alt](../src/images/monorepo2.png)
+> <br/> `yarn dlx @yarnpkg/sdks vscode` ![alt](../src/images/monorepo1.png) <br/> ![alt](../src/images/monorepo2.png)
 
 ## typescript 설정
 
@@ -158,7 +159,7 @@ next-app 에 사용되는 의존성들은 root 에서 관리한다.
 
 ## common component
 
-### 공유 컴포넌트 생성
+### 공유 컴포넌트 폴더 생성
 
 ```shell
 $ cd shared
@@ -170,25 +171,15 @@ $ yarn init -y
 $ mkdir src
 ```
 
-shared/package.json
+shared/component/package.json
 
 ```json
 {
   "name": "@common/component",
   "packageManager": "yarn@3.3.1",
-  "main": "dist/index",
-  "types": "dist/index",
-  "files": ["dist"],
-  "scripts": {
-    "build": "yarn clean && yarn compile",
-    "clean": "rimraf -rf ./dist",
-    "compile": "tsc"
-  },
   "devDependencies": {
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@types/rimraf": "^3",
-    "rimraf": "^3.0.2",
     "typescript": "^4.9.4"
   },
   "dependencies": {
@@ -198,7 +189,7 @@ shared/package.json
 }
 ```
 
-shared/src
+### share 컴포넌트 작성
 
 ```bash
 ├── shared
@@ -209,10 +200,8 @@ shared/src
 │      └── package.json
 ├── services
 │   └── 서비스 코드 위치
-├── package.json
 ├── yarn.lock
-├── package.json
-└── run.sh
+└── package.json
 ```
 
 root/packages.json
@@ -226,10 +215,7 @@ scripts:{
 ```
 
 ```shell
-yarn component add -D rimraf
 yarn component -D typescript
-
-yarn component build
 ```
 
 root 폴더에서 yarn 으로 install
@@ -243,7 +229,8 @@ services/next-app/tsconfig.json
   "compilerOptions": {
     ...
     "paths": {
-      "@pnds/component": ["../../shared/components/src"],
+      "*": ["./src/*"],
+      "@common/component": ["../../shared/components/src"],
     }
     ...
   },
