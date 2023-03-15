@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "gatsby";
-import { Template, Title } from "component";
+import { Template, Title, SeriseList } from "component";
 
 export const pageQuery = graphql`
   query MyQuery {
@@ -34,6 +34,7 @@ const BlogPostTemplate = ({ data }) => {
       >
         {frontmatter.title}
       </Title>
+      <SeriseList />
       <div className="md">
         <div className="py-4" dangerouslySetInnerHTML={{ __html: html }} />
       </div>

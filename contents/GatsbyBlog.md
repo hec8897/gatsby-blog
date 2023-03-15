@@ -1,6 +1,6 @@
 ---
 date: "2023-03-07"
-title: "Gatsby로 Blog 만들기"
+title: "Gatsby로 Blog 만들기 (1) - 기본 설정"
 categories: ["Gatsby", "frontEnd"]
 series: 블로그 제작
 featuredImage: "../src/images/icon.png"
